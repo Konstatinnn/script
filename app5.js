@@ -106,8 +106,7 @@ async function getSms(orderId = null, secondRequest = false) {
                 else {fs.appendFileSync(pinFilePath, `\n${smsCode}`)
                 console.log(`The first code ${smsCode} has been received and added to the PIN.txt file.`);
                 await deleteSms(currentId);
-                setTimeout(() => {getSms(currentId, true)}, 10 * 1000);     
-                console.log(`The new request start after 10 seconds`);                                   
+                setTimeout(() => {getSms(currentId, true)}, 10 * 1000);                                      
                 break; 
             }
         }
