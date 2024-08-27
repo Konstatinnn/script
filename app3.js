@@ -104,7 +104,7 @@ async function getSms(orderId = null, secondRequest = false) {
                 if(secondRequest){
                     fs.appendFileSync(pinFilePath, `:${smsCode}\n`)
                 }
-                else {fs.appendFileSync(pinFilePath, `${smsCode}`);}
+                else {fs.appendFileSync(pinFilePath, `\n${smsCode}`);}
                 console.log(`The code ${smsCode} has been received and added to the PIN.txt file.`);  
                 await deleteSms(currentId);
                 rl.question('Do you need a new code? YES: 1, NO: 0 ', (answer) => {
